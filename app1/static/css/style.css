@@ -1,0 +1,15 @@
+header {
+  width: 90%;
+  height: 10vh;
+  display: flex;
+  margin: auto;
+  background-color: blueviolet;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+}
+head div ul li{
+    display: inline-block;
+    list-style: none;
+    margin-left: 10px;
+}

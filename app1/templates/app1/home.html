@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud app</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div>Auth App</div>
+        <div>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'add' %}">Add</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'register' %}">Register</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section>
+        <div><h1>Students List</h1></div>
+        <div>
+            <ul>
+                
+                {% for student in student %} 
+                <li><a href="{% url 'detail' student.id %}">{{student.name}}</a>  - <a href="{% url 'update' student.id %}">Update</a>-- <a href="{% url 'delete' student.id %}">Delete</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    
+</body>
+</html>
